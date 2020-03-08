@@ -30,10 +30,14 @@ class App extends React.Component {
       <div className = "App">
         <div className = "login">
           <div className = "container">
-            {isLoginActive && <Login containerRef={(ref) => this.current = ref}/> }
-            {!isLoginActive && <Register containerRef={(ref) => this.current = ref}/>}
+            {isLoginActive && (<Login containerRef={(ref) => this.current = ref}/> )}
+            {!isLoginActive && (<Register containerRef={(ref) => this.current = ref}/>)}
           </div>
-          <RightSide current= {current} containerRef={ref => this.RightSide = ref} onClick= {this.changeState.bind(this)}/>
+          <RightSide 
+          current= {current} 
+          currentActive= {currentActive}
+          containerRef={ref => (this.RightSide = ref)} 
+          onClick= {this.changeState.bind(this)}/>
         </div>
       </div>
     )
@@ -41,10 +45,14 @@ class App extends React.Component {
 }
 
 const RightSide = props =>{
-  return <div className = "right-side" ref= {props.containerRef} onClick= {props.onClick}>
+  return (
+    <div className = "right-side" 
+    ref= {props.containerRef} 
+    onClick= {props.onClick}
+    >
     <div className="inner-container">
       <div className="text">{props.current}</div>
     </div>
   </div>
-}
+)}
 export default App;
