@@ -13,7 +13,13 @@ class App extends React.Component {
 
   changeState(){
     const {isLoginActive} = this.state;
-    // if(isLoginActive)
+    if(isLoginActive) {
+      this.RightSide.classList.remove('Right');
+      this.RightSide.classList.add("Left");
+    } else {
+      this.RightSide.classList.remove("Left");
+      this.RightSide.classList.add("Right");
+    }
   }
   render(){
     const {isLoginActive} = this.state;
