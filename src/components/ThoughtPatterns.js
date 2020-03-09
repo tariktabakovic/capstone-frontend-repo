@@ -3,7 +3,8 @@ import {Container, ListGroup, ListGroupItem, Button} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import uuid from 'uuid';
 import {connect} from 'react-redux';
-import {getThoughts} from '../actions/thoughtActions'
+import {getThoughts} from '../actions/thoughtActions';
+import PropTypes from 'prop-types';
 
 class ThoughtPattern extends Component {
     
@@ -46,6 +47,11 @@ class ThoughtPattern extends Component {
             </Container>
         );
     }
+}
+
+ThoughtPattern.propTypes = {
+    getThoughts: PropTypes.func.isRequired,
+    thought: PropTypes.object.isRequired
 }
 
 const mapStateToProps= (state) =>({
