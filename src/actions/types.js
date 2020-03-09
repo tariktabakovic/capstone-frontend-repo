@@ -1,0 +1,3 @@
+export const GET_THOUGHTS = 'GET_THOUGHTS';
+export const ADD_THOUGHT = 'ADD_THOUGHT';
+export const DELETE_THOUGHT = 'DELETE_THOUGHT';
