@@ -47,4 +47,8 @@ class ThoughtPattern extends Component {
         );
     }
 }
-export default ThoughtPattern;
+
+const mapStateToProps= (state) =>({
+    thought: state.thought
+});
+export default connect(mapStateToProps, {getThoughts})(ThoughtPattern);
