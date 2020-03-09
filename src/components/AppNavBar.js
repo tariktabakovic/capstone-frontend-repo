@@ -11,16 +11,22 @@ import {
 } from 'reactstrap';
 
 class AppNavbar extends Components {
-    constructor(props){
-        super(props);
-        this.state= {
-            isOpen: false
-        }
+   state = {
+        isOpen: false
+    }
+    toggle = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+    render(){
+        <div>
+            <Navbar color= "dark" dark expand= "sm" className= "mb-5">
+
+            </Navbar>
+        </div>
     }
 }
 
-toggle = () => {
-
-}
 
 export default AppNavbar;
