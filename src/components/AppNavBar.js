@@ -10,7 +10,7 @@ import {
     Container
 } from 'reactstrap';
 
-class AppNavbar extends Components {
+class AppNavbar extends Component {
    state = {
         isOpen: false
     }
@@ -20,6 +20,7 @@ class AppNavbar extends Components {
         });
     }
     render(){
+        return (
         <div>
             <Navbar color= "dark" dark expand= "sm" className= "mb-5">
             <Container>
@@ -38,6 +39,7 @@ class AppNavbar extends Components {
             </Container>
             </Navbar>
         </div>
+        );
     }
 }
 
