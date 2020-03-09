@@ -33,6 +33,15 @@ class ThoughtPattern extends Component {
                         {thoughts.map(({id, name})=> (
                             <CSSTransition key={id} timeout= {500} classNames="fade">
                                 <ListGroupItem>
+                                    <Button className= "remove-btn"
+                                    color="danger"
+                                    size="sm"
+                                    onClick={()=>{
+                                        this.setState(state=>({
+                                            thoughts: state.thoughts.filter(thought => thought.id !== id)
+                                        }))
+                                    }}
+                                    >&times;</Button>
                                     {name}
                                 </ListGroupItem>
                             </CSSTransition>
