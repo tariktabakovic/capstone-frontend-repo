@@ -2,16 +2,11 @@ import React, {Component} from 'react';
 import {Container, ListGroup, ListGroupItem, Button} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import uuid from 'uuid';
+import {connect} from 'react-redux';
+import {getThoughts} from '../actions/thoughtActions'
 
 class ThoughtPattern extends Component {
-    state= {
-        thoughts: [
-            {id: uuid(), name: 'Be nice'},
-            {id: uuid(), name: 'Be fun'},
-            {id: uuid(), name: 'Be now'},
-            {id: uuid(), name: 'Be happy'}
-        ]
-    }
+    
     render(){
         const {thoughts} = this.state;
         return(
