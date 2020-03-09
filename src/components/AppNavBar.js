@@ -12,8 +12,15 @@ import {
 
 class AppNavbar extends Components {
     constructor(props){
-        super(props)
+        super(props);
+        this.state= {
+            isOpen: false
+        }
     }
+}
+
+toggle = () => {
+
 }
 
 export default AppNavbar;
