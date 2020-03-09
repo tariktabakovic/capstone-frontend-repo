@@ -7,9 +7,13 @@ import {getThoughts} from '../actions/thoughtActions';
 import PropTypes from 'prop-types';
 
 class ThoughtPattern extends Component {
+
+    componentDidMount(){
+        this.props.getThoughts();
+    }
     
     render(){
-        const {thoughts} = this.state;
+        const {thoughts} = this.props.thought;
         return(
             <Container>
                 <Button
