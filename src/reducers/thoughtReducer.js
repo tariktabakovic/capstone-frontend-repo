@@ -9,3 +9,14 @@ const initialState= {
         {id: uuid(), name: 'Be happy'}
     ]
 }
+
+export default function(state= initialState, action){
+    switch(action.type){
+        case GET_THOUGHTS:
+            return {
+                ...state
+        }
+        default:
+            return state;
+    }
+}
