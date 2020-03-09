@@ -10,10 +10,12 @@ class App extends React.Component {
   
   render(){
     return(
-      <div className = "App">
-        <AppNavBar/>
-        <ThoughtPatterns/>
-      </div>
+      <Provider store={store}>
+        <div className = "App">
+          <AppNavBar/>
+          <ThoughtPatterns/>
+        </div>
+      </Provider>
     )}
 }
 
