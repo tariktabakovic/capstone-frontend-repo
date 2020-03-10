@@ -54,6 +54,12 @@ class ThoughtModal extends Component{
                                     id= "thought"
                                     placeholder= "Record your daily thoughts"
                                     onChange= {this.onChange}/>
+                                    <Button
+                                    color = "dark"
+                                    style= {{marginTop: '2rem'}}
+                                    block>
+                                        Add Thought
+                                    </Button>
                                 </FormGroup>
                             </Form>
                         </ModalBody>
