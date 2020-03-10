@@ -21,6 +21,11 @@ export default function(state= initialState, action){
                 ...state,
                 thoughts: state.thoughts.filter(thought => thought.id !== action.payload)
             };
+        case ADD_THOUGHT:
+            return{
+                ...state,
+                thoughts: [action.payload, ...state.thoughts]
+            };
         default:
             return state;
     }
