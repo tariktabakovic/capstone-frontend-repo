@@ -4,7 +4,7 @@ import {GET_THOUGHTS, ADD_THOUGHT, DELETE_THOUGHT, THOUGHTS_LOADING} from './typ
 export const getThoughts = () => dispatch => {
     dispatch(setThoughtsLoading());
     axios 
-        .get('/api/thoughts')
+        .get('/api/dailythoughts')
         .then(res=>
             dispatch({
                 type: GET_THOUGHTS,
@@ -15,7 +15,7 @@ export const getThoughts = () => dispatch => {
 
 export const addThought = thought => dispatch => {
     axios
-        .post('/api/thoughts', thought)
+        .post('/api/dailythoughts', thought)
         .then(res =>
             dispatch({
                 type: ADD_THOUGHT,
