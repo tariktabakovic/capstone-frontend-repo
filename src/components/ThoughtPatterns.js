@@ -3,13 +3,17 @@ import {Container, ListGroup, ListGroupItem, Button} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import uuid from 'uuid';
 import {connect} from 'react-redux';
-import {getThoughts} from '../actions/thoughtActions';
+import {getThoughts, deleteThought} from '../actions/thoughtActions';
 import PropTypes from 'prop-types';
 
 class ThoughtPattern extends Component {
 
     componentDidMount(){
         this.props.getThoughts();
+    }
+
+    onDeleteClick = (id) => {
+        this.props.deleteThought(id);
     }
     
     render(){
@@ -36,11 +40,7 @@ class ThoughtPattern extends Component {
                                     <Button className= "remove-btn"
                                     color="danger"
                                     size="sm"
-                                    onClick={()=>{
-                                        this.setState(state=>({
-                                            thoughts: state.thoughts.filter(thought => thought.id !== id)
-                                        }))
-                                    }}
+                                    onClick={this.onDeleteClick.bind(this, id)}
                                     >&times;</Button>
                                     {name}
                                 </ListGroupItem>
@@ -61,4 +61,4 @@ ThoughtPattern.propTypes = {
 const mapStateToProps= (state) =>({
     thought: state.thought
 });
-export default connect(mapStateToProps, {getThoughts})(ThoughtPattern);
+export default connect(mapStateToProps, {getThoughts, deleteThought})(ThoughtPattern);
