@@ -17,7 +17,7 @@ export default function(state= initialState, action){
         case DELETE_THOUGHT:
             return {
                 ...state,
-                thoughts: state.thoughts.filter(thought => thought.id !== action.payload)
+                thoughts: state.thoughts.filter(thought => thought._id !== action.payload)
             };
         case ADD_THOUGHT:
             return{
