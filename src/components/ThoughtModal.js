@@ -84,4 +84,8 @@ class ThoughtModal extends Component{
     }
 }
 
-export default connect ()(ThoughtModal);
+const mapStateToProps = state => ({
+    thought: state.thought
+})
+
+export default connect(mapStateToProps, {addThought})(ThoughtModal);
