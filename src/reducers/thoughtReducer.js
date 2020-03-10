@@ -15,7 +15,12 @@ export default function(state= initialState, action){
         case GET_THOUGHTS:
             return {
                 ...state
-        }
+        };
+        case DELETE_THOUGHT:
+            return {
+                ...state,
+                thoughts: state.thoughts.filter(thought => thought.id !== action.payload)
+            };
         default:
             return state;
     }
