@@ -43,8 +43,17 @@ class RegisterModal extends Component{
     onSubmit = (e) =>{
         e.preventDefault();
 
-        // Close modal
-        this.toggle();
+        const {name, email, password} = this.state;
+
+        // Create user object
+        const newUser = {
+            name, 
+            email,
+            password
+        };
+        
+        // Attempt to register
+        this.props.register(newUser);
     }
 
     render(){
