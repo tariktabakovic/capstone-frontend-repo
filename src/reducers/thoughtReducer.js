@@ -1,13 +1,9 @@
 import uuid from 'uuid';
-import {GET_THOUGHTS, ADD_THOUGHT, DELETE_THOUGHT} from '../actions/types';
+import {GET_THOUGHTS, ADD_THOUGHT, DELETE_THOUGHT, THOUGHTS_LOADING} from '../actions/types';
 
 const initialState= {
-    thoughts: [
-        {id: uuid(), name: 'Be nice'},
-        {id: uuid(), name: 'Be fun'},
-        {id: uuid(), name: 'Be now'},
-        {id: uuid(), name: 'Be happy'}
-    ]
+    thoughts: [],
+    loading: false
 }
 
 export default function(state= initialState, action){
