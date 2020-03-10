@@ -13,6 +13,17 @@ export const getThoughts = () => dispatch => {
             )
 }
 
+export const addThought = thought => dispatch => {
+    axios
+        .post('/api/thoughts', thought)
+        .then(res =>
+            dispatch({
+                type: ADD_THOUGHT,
+                payload: res.data
+            })
+        )   
+}
+
 export const deleteThought = (id) => {
     return {
         type: DELETE_THOUGHT,
@@ -20,12 +31,6 @@ export const deleteThought = (id) => {
     }
 }
 
-export const addThought = (thought) => {
-    return {
-        type: ADD_THOUGHT,
-        payload: thought
-    }
-}
 
 export const setThoughtsLoading = () =>{
     return {
