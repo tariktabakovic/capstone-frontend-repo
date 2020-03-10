@@ -12,3 +12,10 @@ export const deleteThought = (id) => {
         payload: id
     }
 }
+
+export const addThought = (thought) => {
+    return {
+        type: ADD_THOUGHT,
+        payload: thought
+    }
+}
