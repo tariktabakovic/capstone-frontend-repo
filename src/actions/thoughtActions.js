@@ -5,3 +5,10 @@ export const getThoughts = () => {
         type: GET_THOUGHTS
     }
 }
+
+export const deleteThought = (id) => {
+    return {
+        type: DELETE_THOUGHT,
+        payload: id
+    }
+}
