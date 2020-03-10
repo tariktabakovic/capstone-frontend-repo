@@ -12,6 +12,7 @@ import {
 
 import {connect} from 'react-redux';
 import {addThought} from '../actions/thoughtActions';
+import uuid from 'uuid';
 
 class ThoughtModal extends Component{
     state= {
@@ -27,6 +28,20 @@ class ThoughtModal extends Component{
 
     onChange = (e) =>{
         this.setState({[e.target.name]: e.target.value});
+    }
+
+    onSubmit = (e) =>{
+        e.preventDefault();
+        const newThought = {
+            id: uuid(),
+            name: this.state.name
+        }
+
+        // Add thought via addThought action
+        this.props.addThought(newThought);
+
+        // Close modal
+        this.toggle();
     }
 
     render(){
