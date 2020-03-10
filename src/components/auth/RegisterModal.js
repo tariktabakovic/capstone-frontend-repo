@@ -13,6 +13,7 @@ import {
 
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {register} from '../../actions/authActions';
 
 class RegisterModal extends Component{
     state= {
@@ -25,7 +26,8 @@ class RegisterModal extends Component{
 
     static propTypes= {
         isAuthenticated: PropTypes.bool,
-        error: PropTypes.object.isRequired
+        error: PropTypes.object.isRequired,
+        register: PropTypes.func.isRequired
     }
 
     toggle = () =>{
@@ -66,6 +68,7 @@ class RegisterModal extends Component{
                                     name= "name"
                                     id= "name"
                                     placeholder= "Name"
+                                    className= "mb-3"
                                     onChange= {this.onChange}/>
                                     
                                     <Label for= "email">Email</Label>
@@ -74,6 +77,7 @@ class RegisterModal extends Component{
                                     name= "email"
                                     id= "email"
                                     placeholder= "Email"
+                                    className= "mb-3"
                                     onChange= {this.onChange}/>
                                     
                                     <Label for= "password">Password</Label>
@@ -82,6 +86,7 @@ class RegisterModal extends Component{
                                     name= "password"
                                     id= "password"
                                     placeholder= "Password"
+                                    className= "mb-3"
                                     onChange= {this.onChange}/>
                                     <Button
                                     color = "dark"
@@ -103,4 +108,4 @@ const mapStateToProps = state => ({
     error: state.error
 })
 
-export default connect(mapStateToProps, {})(RegisterModal);
+export default connect(mapStateToProps, {register})(RegisterModal);
