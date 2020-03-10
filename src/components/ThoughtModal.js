@@ -12,7 +12,6 @@ import {
 
 import {connect} from 'react-redux';
 import {addThought} from '../actions/thoughtActions';
-import uuid from 'uuid';
 
 class ThoughtModal extends Component{
     state= {
@@ -33,7 +32,6 @@ class ThoughtModal extends Component{
     onSubmit = (e) =>{
         e.preventDefault();
         const newThought = {
-            id: uuid(),
             name: this.state.name
         }
 
