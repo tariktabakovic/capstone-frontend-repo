@@ -9,3 +9,12 @@ import {
     Label,
     Input
 } from 'reactstrap';
+
+import {connect} from 'react-redux';
+import {addThought} from '../actions/thoughtActions';
+
+class ThoughtModal extends Component{
+
+}
+
+export default connect ()(ThoughtModal);
