@@ -24,11 +24,14 @@ export const addThought = thought => dispatch => {
         )   
 }
 
-export const deleteThought = (id) => {
-    return {
-        type: DELETE_THOUGHT,
-        payload: id
-    }
+export const deleteThought = id => dispatch => {
+    axios
+        .delete(`/api/dailythoughts/${id}`)
+        .then(res => dispatch({
+            type: DELETE_THOUGHT,
+            payload: id
+        })
+    )
 }
 
 
