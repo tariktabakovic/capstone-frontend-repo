@@ -1,9 +1,16 @@
+import axios from 'axios';
 import {GET_THOUGHTS, ADD_THOUGHT, DELETE_THOUGHT, THOUGHTS_LOADING} from './types';
 
-export const getThoughts = () => {
-    return {
-        type: GET_THOUGHTS
-    }
+export const getThoughts = () => dispatch => {
+    dispatch(setThoughtsLoading());
+    axios 
+        .get('/api/thoughts')
+        .then(res=>
+            dispatch({
+                type: GET_THOUGHTS,
+                payload: res.data
+                })
+            )
 }
 
 export const deleteThought = (id) => {
