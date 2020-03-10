@@ -22,6 +22,11 @@ export default function(state= initialState, action){
                 ...state,
                 thoughts: [action.payload, ...state.thoughts]
             };
+            case THOUGHTS_LOADING:
+                return{
+                    ...state,
+                    loading: true
+                }
         default:
             return state;
     }
