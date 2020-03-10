@@ -10,7 +10,9 @@ export default function(state= initialState, action){
     switch(action.type){
         case GET_THOUGHTS:
             return {
-                ...state
+                ...state,
+                thoughts: action.payload,
+                loading: false
         };
         case DELETE_THOUGHT:
             return {
