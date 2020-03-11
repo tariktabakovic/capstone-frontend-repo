@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ThoughtPatterns from './components/ThoughtPatterns';
 import ThoughtModal from './components/ThoughtModal';
 import {Container} from 'reactstrap';
+import {BrowserRouter} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 
 import {Provider} from 'react-redux';
 import store from './store';
