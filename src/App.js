@@ -19,13 +19,15 @@ class App extends React.Component {
   render(){
     return(
       <Provider store={store}>
-        <div className = "App">
-          <AppNavBar/>
-          <Container>
-            <ThoughtModal/>
-            <ThoughtPatterns/>
-          </Container>
-        </div>
+        <Router>
+          <div className = "App">
+            <AppNavBar/>
+            <Container>
+              <ThoughtModal/>
+              <ThoughtPatterns/>
+            </Container>
+          </div>
+        </Router>
       </Provider>
     )}
 }
