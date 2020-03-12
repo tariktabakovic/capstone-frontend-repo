@@ -77,7 +77,9 @@ export class LoginModal extends Component{
     render(){
         return (
             <div>
-                <Button onClick= {this.toggle} href="#">
+                <Button 
+                onClick= {this.toggle} 
+                style= {{margin: '2px'}}>
                     Login
                 </Button>
                 <Modal

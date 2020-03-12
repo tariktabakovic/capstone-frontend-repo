@@ -12,11 +12,16 @@ import {
 
 import {connect} from 'react-redux';
 import {addThought} from '../actions/thoughtActions';
+import PropTypes from 'prop-types';
 
 class ThoughtModal extends Component{
     state= {
         modal: false,
         name: ''
+    };
+
+    static propTypes = {
+        isAuthenticated: PropTypes.bool
     }
 
     toggle = () =>{
@@ -45,12 +50,13 @@ class ThoughtModal extends Component{
     render(){
         return (
             <div>
+                {this.props.isAuthenticated ?(
                 <Button
                 color= "dark"
                 style= {{marginBottom: "2rem"}}
                 onClick= {this.toggle}>
                     Record your daily thoughts
-                </Button>
+        </Button> ):( <h4 className = "mb-3 ml-4">Please log in to access app</h4> )}
                 <Modal
                     isOpen= {this.state.modal}
                     toggle= {this.toggle}>
@@ -83,7 +89,8 @@ class ThoughtModal extends Component{
 }
 
 const mapStateToProps = state => ({
-    thought: state.thought
+    thought: state.thought,
+    isAuthenticated: state.auth.isAuthenticated
 })
 
 export default connect(mapStateToProps, {addThought})(ThoughtModal);
