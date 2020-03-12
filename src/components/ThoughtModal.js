@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {
     Button, 
     Modal,
@@ -49,6 +49,7 @@ class ThoughtModal extends Component{
 
     render(){
         return (
+            <Fragment>
             <div>
                 {this.props.isAuthenticated ?(
                 <Button
@@ -66,7 +67,7 @@ class ThoughtModal extends Component{
                         <ModalBody>
                             <Form onSubmit = {this.onSubmit}>
                                 <FormGroup>
-                                    <Label for= "thought">Thought</Label>
+                                    <Label for= "thought"></Label>
                                     <Input 
                                     type= "text"
                                     name= "name"
@@ -83,7 +84,8 @@ class ThoughtModal extends Component{
                             </Form>
                         </ModalBody>
                 </Modal>
-            </div>
+                </div>
+            </Fragment>
         );
     }
 }
