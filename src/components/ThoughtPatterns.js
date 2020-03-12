@@ -33,9 +33,10 @@ class ThoughtPattern extends Component {
                             <CSSTransition key={_id} timeout= {500} classNames="fade">
                                 <ListGroupItem>
                                     <Button className= "remove-btn"
-                                    color="danger"
+                                    color="dark"
                                     size="sm"
                                     onClick={this.onDeleteClick.bind(this, _id)}
+                                    style= {{margin: '2px'}}
                                     >&times;</Button>
                                     {name}
                                 </ListGroupItem>
