@@ -50,6 +50,7 @@ class ThoughtModal extends Component{
     render(){
         return (
             <Fragment>
+                <h4 className= "ml-4">WhoIsGrandmaster?</h4>
             <div>
                 {this.props.isAuthenticated ?(
                 <Button
@@ -57,7 +58,8 @@ class ThoughtModal extends Component{
                 style= {{marginBottom: "2rem"}}
                 onClick= {this.toggle}>
                     Record your daily thoughts
-        </Button> ):( <h4 className = "mb-3 ml-4">Please log in to access app</h4> )}
+        </Button> ):( 
+        <h4 className = "mb-3 ml-4">Please log in to access app</h4> )}
                 <Modal
                     isOpen= {this.state.modal}
                     toggle= {this.toggle}>
