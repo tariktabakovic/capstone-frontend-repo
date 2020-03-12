@@ -11,13 +11,13 @@ import {
     NavLink,
     Alert
 } from 'reactstrap';
-
+import {Link, useHistory} from 'react-router-dom'
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {login} from '../../actions/authActions';
 import {clearErrors} from '../../actions/errorActions';
 
-class LoginModal extends Component{
+export class LoginModal extends Component{
     state= {
         modal: false,
         email: '',
@@ -72,13 +72,14 @@ class LoginModal extends Component{
         // Attempt to login
         this.props.login(user);
     }
+  
 
     render(){
         return (
             <div>
-                <NavLink onClick= {this.toggle} href="#">
+                <Button onClick= {this.toggle} href="#">
                     Login
-                </NavLink>
+                </Button>
                 <Modal
                     isOpen= {this.state.modal}
                     toggle= {this.toggle}>
@@ -96,6 +97,7 @@ class LoginModal extends Component{
                                     id= "email"
                                     placeholder= "Email"
                                     className= "mb-3"
+                                    autoComplete= "on"
                                     onChange= {this.onChange}/>
                                     
                                     <Label for= "password">Password</Label>
@@ -105,8 +107,10 @@ class LoginModal extends Component{
                                     id= "password"
                                     placeholder= "Password"
                                     className= "mb-3"
+                                    autoComplete= "on"
                                     onChange= {this.onChange}/>
                                     <Button
+                                    // to= "/home"
                                     color = "dark"
                                     style= {{marginTop: '2rem'}}
                                     block>
