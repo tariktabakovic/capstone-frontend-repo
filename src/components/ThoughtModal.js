@@ -56,6 +56,7 @@ class ThoughtModal extends Component{
                 <Button
                 color= "dark"
                 style= {{marginBottom: "2rem"}}
+                style= {{marginLeft: "1.5rem"}}
                 onClick= {this.toggle}>
                     Record your daily thoughts
         </Button> ):( 
