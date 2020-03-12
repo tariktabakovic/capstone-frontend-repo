@@ -7,7 +7,13 @@ import {getThoughts, deleteThought} from '../actions/thoughtActions';
 import PropTypes from 'prop-types';
 
 class ThoughtPattern extends Component {
-
+    
+    static propTypes = {
+        getThoughts: PropTypes.func.isRequired,
+        thought: PropTypes.object.isRequired,
+        isAuthenticated: PropTypes.bool
+    }
+    
     componentDidMount(){
         this.props.getThoughts();
     }
@@ -20,6 +26,7 @@ class ThoughtPattern extends Component {
         const {thoughts} = this.props.thought;
         return(
             <Container>
+                {this.props.isAuthenticated? 
                 <ListGroup>
                     <TransitionGroup className= "thought-list">
                         {thoughts.map(({_id, name})=> (
@@ -35,18 +42,14 @@ class ThoughtPattern extends Component {
                             </CSSTransition>
                         ))}
                     </TransitionGroup>
-                </ListGroup>
+                </ListGroup> : null }
             </Container>
         );
     }
 }
 
-ThoughtPattern.propTypes = {
-    getThoughts: PropTypes.func.isRequired,
-    thought: PropTypes.object.isRequired
-}
-
 const mapStateToProps= (state) =>({
-    thought: state.thought
+    thought: state.thought,
+    isAuthenticated: state.auth.isAuthenticated
 });
 export default connect(mapStateToProps, {getThoughts, deleteThought})(ThoughtPattern);
