@@ -11,11 +11,12 @@ import {
     NavLink,
     Alert
 } from 'reactstrap';
-
+import {Redirect, Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {register} from '../../actions/authActions';
 import {clearErrors} from '../../actions/errorActions';
+import '../../Welcome.css';
 
 class RegisterModal extends Component{
     state= {
@@ -82,9 +83,11 @@ class RegisterModal extends Component{
     render(){
         return (
             <div>
-                <NavLink onClick= {this.toggle} href="#">
+                <Button 
+                    onClick= {this.toggle}
+                    style= {{margin: '2px'}}>
                     Register
-                </NavLink>
+                </Button>
                 <Modal
                     isOpen= {this.state.modal}
                     toggle= {this.toggle}>

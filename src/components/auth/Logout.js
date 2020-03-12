@@ -3,7 +3,6 @@ import {NavLink} from 'reactstrap';
 import {connect} from 'react-redux';
 import {logout} from '../../actions/authActions';
 import PropTypes from 'prop-types';
-import {Button} from 'reactstrap';
 
 export class Logout extends Component{
     static propTypes = {
