@@ -5,6 +5,7 @@ import uuid from 'uuid';
 import {connect} from 'react-redux';
 import {getThoughts, deleteThought} from '../actions/thoughtActions';
 import PropTypes from 'prop-types';
+import Game from '../components/Game';
 
 class ThoughtPattern extends Component {
     
@@ -27,7 +28,9 @@ class ThoughtPattern extends Component {
         return(
             <Container>
                 {this.props.isAuthenticated? 
+                
                 <ListGroup>
+                    {/* <Game/> */}
                     <TransitionGroup className= "thought-list">
                         {thoughts.map(({_id, name})=> (
                             <CSSTransition key={_id} timeout= {500} classNames="fade">
@@ -43,7 +46,9 @@ class ThoughtPattern extends Component {
                             </CSSTransition>
                         ))}
                     </TransitionGroup>
-                </ListGroup> : null }
+                    <Game></Game> 
+                </ListGroup> 
+                    : null }
             </Container>
         );
     }
